@@ -49,7 +49,7 @@ compile()
 test_bin()
 {
     manual="";
-    echo -e "选择是否手动测试？（Y/n）:\c"
+    echo -e "是否手动测试？（Y/n）:\c"
     read manual
 
     if [ "$manual" = "n" ]; then
@@ -64,7 +64,7 @@ test_bin()
         for bin in *.out
         do
             echo -e "\033[32m----正在测试 \033[33m" ${bin} "\033[32m----\033[0m"
-            echo -e "测试时间：`date +%Y-%m-%d_%H:%M:%S_CST`\n" | tee ../logs/${bin%%.*}.txt
+            echo -e "测试时间：`date +%Y-%m-%d_%H:%M:%S_CST`\n" | tee -a ../logs/${bin%%.*}.txt
             result=`./${bin}` 
             ret=$?
             echo $result | tee -a ../logs/${bin%%.*}.txt
