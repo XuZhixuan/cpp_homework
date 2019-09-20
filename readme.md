@@ -11,7 +11,6 @@
 └─tests                       // 测试输入   
 ```
 ## 编译与编译测试工具   
----
 * 项目以 GCC 为编译工具   
 * 项目编译工具需要 Linux 操作系统或 Window Subsystem Linux 运行   
 ### 使用说明   
@@ -26,10 +25,8 @@
 2. 需要 Windows 编译工具？   
     复制源代码到 Dev-C++ 或 Visual Studio 项目中编译测试即可。   
 ## Contributors 
----  
 * [f(x,z)=xzx](https://github/com/XuZhixuan)   
 ## LICENSE
----
 This is open-source project licensed under [MIT license](https://opensource.org/licenses/MIT)   
 ```
 Copyright (c) 2019 f(x,z)=xzx   
