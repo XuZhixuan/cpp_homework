@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 
 using namespace std;
 
@@ -34,7 +33,6 @@ int ack(int m, int n)
         {
             return ack(m - 1, ack(m, n - 1));
         }        
-    }    
-    
+    }        
     return -1;
 }
