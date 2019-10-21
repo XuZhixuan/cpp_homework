@@ -20,7 +20,7 @@ compile()
 
     pushd $BASEDIR/src/
     # 编译 C 语言源代码文件
-    if [ -f *.c ]; then
+    if [ -n "ls *.c >/dev/null 2>&1" ]; then
         for source in *.c
         do
             echo -e "\033[32m----正在编译\033[33m" ${source} "\033[32m----\033[0m"
@@ -32,7 +32,7 @@ compile()
     fi
 
     # 编译 C++ 语言源代码文件
-    if [ -f *.cpp ]; then
+    if [ -n "ls *.cpp >/dev/null 2>&1" ]; then
         for source in *.cpp
         do
             echo -e "\033[32m----正在编译\033[33m" ${source} "\033[32m----\033[0m"
