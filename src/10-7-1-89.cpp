@@ -3,6 +3,8 @@
 
 using namespace std;
 
+char str[3];
+
 char* convert(int);
 
 class Time
@@ -137,8 +139,6 @@ void Time::printTime_24()
 
 char* convert(int input)
 {
-    char* str = new char[3];
-
     str[0] = '0' + input / 10;
     str[1] = '0' + input % 10;
     

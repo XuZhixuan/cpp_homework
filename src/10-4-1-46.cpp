@@ -39,6 +39,8 @@ int main()
         cout << c[i].name << ' ' << c[i].phone << endl;
     }
     
+    delete[] c;
+
 	return 0;
 }
 

@@ -20,6 +20,8 @@ int main()
     cout << str_1;
     cout << ']' << endl;
 
+    delete[] str_1;
+
     return 0;
 }
 

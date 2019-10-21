@@ -25,6 +25,8 @@ int main()
 	cout << feb[length - 1] << endl;
 	cout << sum(feb, length) << endl;
 
+	delete[] feb;
+
 	return 0;
 }
 

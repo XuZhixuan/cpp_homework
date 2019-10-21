@@ -15,6 +15,8 @@ int main()
 
     cout << input << endl;
 
+    delete[] input;
+
     return 0;
 }
 

@@ -47,5 +47,7 @@ int main()
     cout << other_count << endl;
     cout << total_count << endl;
 
+    delete[] input;
+
     return 0;
 }

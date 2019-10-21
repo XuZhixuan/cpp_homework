@@ -26,6 +26,9 @@ int main()
     cout << str_2;
     cout << '+' << endl;
 
+    delete[] str_1;
+    delete[] str_2;
+
     return 0;
 }
 

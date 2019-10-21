@@ -26,6 +26,8 @@ int main()
     }
     
     cout << endl;
+
+    delete[] list;
     
     return 0;
 }
