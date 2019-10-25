@@ -5,8 +5,8 @@ using namespace std;
 class Shape
 {
 public:
-	virtual void printName()=0;
-	virtual double printArea()=0;
+	virtual void printName() = 0;
+	virtual double printArea() = 0;
 };
 
 class Circle : public Shape
@@ -112,7 +112,7 @@ Circle::Circle(double radius)
 
 void Circle::printName()
 {
-	cout << "cirlce:";
+	cout << "circle:";
 	cout << "radius=" << radius_ << ',';
 }
 
@@ -152,7 +152,7 @@ Rectangle::Rectangle(double length, double width)
 void Rectangle::printName()
 {
 	cout << "rectangle:";
-	cout << "length=" << length_;
+	cout << "length=" << length_ << ',';
 	cout << "width=" << width_ << ',';
 }
 
@@ -174,8 +174,8 @@ Trapezoid::Trapezoid(double length_u, double length_l, double height)
 void Trapezoid::printName()
 {
 	cout << "trapezoid:";
-	cout << "upperside=" << length_u_;
-	cout << "bottomside=" << length_l_;
+	cout << "upperside=" << length_u_ << ',';
+	cout << "bottomside=" << length_l_ << ',';
 	cout << "hight=" << height_ << ',';
 }
 
@@ -196,8 +196,8 @@ Triangle::Triangle(double length, double height)
 void Triangle::printName()
 {
 	cout << "trangle:";
-	cout << "bottomside=" << length_;
-	cout << "hight" << height_ << ',';
+	cout << "bottomside=" << length_ << ',';
+	cout << "hight=" << height_ << ',';
 }
 
 double Triangle::printArea()
