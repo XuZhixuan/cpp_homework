@@ -1,10 +1,3 @@
-/**
- * Author: XuZhixuan
- * E-mail: sxxuzhixuan@hotmail.com
- * 
- * 由于未知原因，本题暂时无法通过
- **/
-
 #include <iostream>
 #include <string>
 
@@ -19,7 +12,8 @@ struct Contact
 Contact transformer(string);
 int findNum(string);
 void sort(Contact*, int);
-bool higher(string, string);
+bool isLetter(char);
+bool isNum(char);
 
 int main()
 {
@@ -34,74 +28,86 @@ int main()
 
 	sort(c, 5);
 
-    for (int i = 4; i >= 0; i--)
-    {
-        cout << c[i].name << ' ' << c[i].phone << endl;
-    }
-    
-    delete[] c;
+	for (int i = 4; i >= 0; i--)
+	{
+		cout << c[i].name << ' ' << c[i].phone << endl;
+	}
+
+	delete[] c;
 
 	return 0;
 }
 
 bool higher(string a, string b)
 {
-    int length = min(a.length(), b.length());
+	int length = min(a.length(), b.length());
 
-    for (int i = 0; i < length; i++)
-    {
-        if (a[i] < b[i])
-        {
-            return true;
-        } else if (a[i] > b[i])
-        {
-            return false;
-        }
-        
-    }
+	for (int i = 0; i < length; i++)
+	{
+		if (a[i] < b[i])
+		{
+			return true;
+		}
+		else if (a[i] > b[i])
+		{
+			return false;
+		}
 
-    return false;    
+	}
+
+	return false;
 }
 
 
 void sort(Contact* contacts, int size)
 {
-    Contact temp;
+	Contact temp;
 
-    for (int i = 0; i < size; i++)
-    {
-        for (int j = 0; j < size - i - 1; j++)
-        {
-            if (higher(contacts[j].name, contacts[j + 1].name))
-            {
-                temp = contacts[j];
-                contacts[j] = contacts[j + 1];
-                contacts[j + 1] = temp;
-            }            
-        }        
-    }    
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j < size - i - 1; j++)
+		{
+			if (higher(contacts[j].name, contacts[j + 1].name))
+			{
+				temp = contacts[j];
+				contacts[j] = contacts[j + 1];
+				contacts[j + 1] = temp;
+			}
+		}
+	}
 }
 
 Contact transformer(string origin)
 {
-	int pos = 0;
+	int name_end = 0, phone_begin = 0;
+
+	for (int ite = 0; ite < origin.length(); ite++)
+	{
+		if (!isLetter(origin[ite]) && !name_end)
+		{
+			name_end = ite;
+		}
+
+		if (isNum(origin[ite]) && !phone_begin)
+		{
+			phone_begin = ite;
+		}
+	}
+
 	Contact result;
 
-	pos = findNum(origin) - 1;
-	result.name = origin.substr(0, pos);
-	result.phone = origin.substr(pos + 1, origin.length());
+	result.name = origin.substr(0, name_end);
+	result.phone = origin.substr(phone_begin, origin.length());
 
 	return result;
 }
 
-int findNum(string input)
+bool isLetter(char a)
 {
-    for (int i = 0; i < input.size(); i++)
-    {
-        if (input[i] > 47 && input[i] < 58)
-        {
-            return i;
-        }        
-    }
-    return -1; 
+	return (a > 64 && a < 91) || (a > 96 && a < 123);
+}
+
+bool isNum(char a)
+{
+	return a >= '0' && a <= '9';
 }
