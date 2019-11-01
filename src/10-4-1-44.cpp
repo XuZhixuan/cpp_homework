@@ -45,6 +45,9 @@ int main()
 	generate(t);
 
 	print_triangle(t);
+	
+	//Delete to privent memory leak
+	deconstruct(t);
 
 	return 0;
 }
