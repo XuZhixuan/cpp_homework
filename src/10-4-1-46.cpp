@@ -55,7 +55,7 @@ bool higher(string a, string b)
 
 	}
 
-	return false;
+	return a.length() < b.length();
 }
 
 
