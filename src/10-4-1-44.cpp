@@ -46,7 +46,7 @@ int main()
 
 	print_triangle(t);
 	
-	//Delete to privent memory leak
+	//Delete to prevent memory leak
 	deconstruct(t);
 
 	return 0;
