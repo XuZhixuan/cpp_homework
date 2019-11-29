@@ -129,12 +129,16 @@ void Time::printTime_12()
         hour -= 12;
     }
 
-    cout << convert(hour) << ':' << convert(minute_) << ':' << convert(second_) << flag << endl;
+    cout << convert(hour) << ':';
+    cout << convert(minute_) << ':';
+    cout << convert(second_) << flag << endl;
 }
 
 void Time::printTime_24()
 {
-    cout << convert(hour_) << ':' << convert(minute_) << ':' << convert(second_) << endl;
+    cout << convert(hour_) << ':';
+    cout << convert(minute_) << ':';
+    cout << convert(second_) << endl;
 }
 
 char* convert(int input)
