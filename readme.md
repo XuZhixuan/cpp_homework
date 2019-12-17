@@ -25,7 +25,7 @@
 2. 需要 Windows 编译工具？   
     复制源代码到 Dev-C++ 或 Visual Studio 项目中编译测试即可。   
 ## Contributors 
-* [f(x,z)=xzx](https://github/com/XuZhixuan)   
+* [f(x,z)=xzx](https://github.com/XuZhixuan)   
 ## LICENSE
 This is open-source project licensed under [MIT license](https://opensource.org/licenses/MIT)   
 ```
